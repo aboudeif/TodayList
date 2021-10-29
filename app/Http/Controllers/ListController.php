@@ -15,7 +15,9 @@ class ListController extends Controller
     public function index()
     {
         $tasks = Task::all();
-        return view('App.list')->with('tasks',$tasks);
+        return view('App.list',[
+                'tasks' => $tasks
+            ]);
     }
 
     /**
@@ -36,7 +38,13 @@ class ListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $task = Task::create([
+            'name' => $request->input('name'),
+            'color' => $request->input('color'),
+            'content' => $request->input('content')
+        ]);
+
+        return redirect('/list');
     }
 
     /**

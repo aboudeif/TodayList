@@ -9,5 +9,6 @@
 </head>
 <body class="bg-gradient-to-r ar from-gray-100 to-gray-200">
     @yield('content')
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

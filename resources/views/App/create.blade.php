@@ -12,19 +12,21 @@
             type="button" 
             class="bg-red-500 white block shadow-5xl mb-10 p-2 w-15
             uppercase font-bold" 
-            onclick="window.history.back();">
+            onclick="window.location='./';">
                 إلغاء
             </button>
         </div>
             <div>
-                <form action="">
+                <form action="/list" method="POST">
+                    @csrf
                     <div class="block">
                         
                         <input 
                             type="text"
                             class=" w-80 form-input block"
                             name="name"
-                            placeholder="اسم المهمة..">
+                            placeholder="اسم المهمة.."
+                            required>
 
                         <input 
                             type="color"
@@ -37,12 +39,13 @@
                             rows="10"
                             class="block shadow-5xl mb-2 b-2 w-80 
                             placeholder-gray-400 form-textarea"
-                            name="name"
+                            name="content"
                             placeholder="الوصف.."
-                            >
-                        </textarea>
-
+                            required
+                            ></textarea>
+                        
                         <button 
+                            id="colordiv"
                             type="submit" 
                             class="bg-green-500 white block shadow-5xl 
                             mb-10 p-2 w-80 uppercase font-bold" >
